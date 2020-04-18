@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Employee } from './employee.model';
 
@@ -8,17 +8,18 @@ import { Employee } from './employee.model';
   providedIn: 'root'
 })
 export class EmployeeService {
-  selectedEmployee: Employee;
-  employees: Employee[];
-  readonly baseURL: 'http://localhost:3000/employees';
+  public selectedEmployee: Employee;
+  public employees: Array<Employee>;
+  readonly baseURL = 'http://localhost:3000/employees';
   constructor(private http: HttpClient) { 
+    this.selectedEmployee = new Employee();
   }
 
   getEmployees() {
-    return this.http.get(this.baseURL);
+    return this.http.get<Array<Employee>>(this.baseURL);
   }
 
-  postEmployee(emp: Employee) {
+  addEmployee(emp: Employee) {
     return this.http.post(this.baseURL, emp);
   }
 

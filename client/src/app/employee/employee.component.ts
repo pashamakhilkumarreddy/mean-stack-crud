@@ -13,7 +13,8 @@ declare var M: any;
 })
 export class EmployeeComponent implements OnInit {
 
-  constructor(public employeeService: EmployeeService) { }
+  constructor(public employeeService: EmployeeService) { 
+  }
 
   ngOnInit() {
     this.resetForm();
@@ -34,8 +35,8 @@ export class EmployeeComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    if (form.value._id === '') {
-      this.employeeService.postEmployee(form.value).subscribe(res => {
+    if (!form.value._id) {
+      this.employeeService.addEmployee(form.value).subscribe(res => {
         this.refreshEmployeesList();
         this.resetForm(form);
         M.toast({

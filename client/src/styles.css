@@ -1,4 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
 *,
 *::after,
 *::before {
@@ -17,6 +16,12 @@ body {
   position: relative;
   min-height: 100vh;
 }
+
+header nav {
+  padding: 0 1rem;
+  background-color: #1e88e5;
+}
+
 form div.input-field input {
   padding-left: 1rem !important;
   color: #25a297;
@@ -35,9 +40,11 @@ input.ng-invalid.ng-dirty {
 .btn-custom,
 .btn-custom:hover,
 .btn-custom:focus {
-  background-color: transparent;
+  background-color: #fff;
+  color: #000;
   font-size: 1.1rem;
-  margin: 0 5px;
+  margin: 0 0.5rem;
+  font-weight: 500;
   border: #fff solid 1px;
   text-transform: none;
 }
@@ -52,12 +59,12 @@ div.card {
   height: 400;
 }
 
-a.action-btn {
-  color: #9e9e9e;
-  margin: 0 5px;
+span.action-btn {
+  margin: 0 0.3rem;
 }
 
-a.action-btn:hover {
+span.action-btn:hover {
+  color: #9e9e9e;
   cursor: pointer;
 }
 
@@ -66,4 +73,40 @@ a.action-btn:hover {
   right: auto !important;
   bottom: 10%;
   left: 7%;
+}
+
+tr {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(239, 233, 233, 0.4);
+}
+
+td,
+th {
+  padding: 0.8rem 0.4rem;
+}
+
+.submit-buttons {
+  display: flex;
+  flex-flow: row-reverse nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.card .card-content {
+  padding: 5rem 1.5rem 0.5rem;
+}
+
+.page-footer {
+  padding: 1.25rem 0;
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  background-color: #1e88e5;
+}
+
+.page-footer .footer-copyright {
+  text-align: center;
 }
