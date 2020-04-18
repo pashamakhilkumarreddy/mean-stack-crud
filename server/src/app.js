@@ -9,7 +9,7 @@ const config = require('./config');
 
 app.use(express.json());
 app.use(cors({
-  origin: 'http://localhost:4200/'
+  origin: 'http://localhost:4200'
 }))
 
 const PORT = config.PORT;
